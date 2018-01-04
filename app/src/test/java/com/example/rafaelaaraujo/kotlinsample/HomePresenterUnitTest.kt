@@ -15,11 +15,9 @@ import org.mockito.BDDMockito.given
 class HomePresenterUnitTest {
 
     val homeViewMock: HomeContract.View = mock(HomeContract.View::class.java)
-    //val schedulersFactoryStub: SchedulersFactory = mock(SchedulersFactory::class.java)
     val instagramPostServiceStub = mock(InstagramPostService::class.java)
 
     val objectUnderTest = HomePresenter(homeViewMock, instagramPostServiceStub)
-
 
     @Test
     fun testLoadPosts() {
