@@ -34,6 +34,8 @@ class InstagramPostAdapter(
             instagramPostLikes.text = context.getString(R.string.likes_text, instagramPost.likes)
             instagramPostDescription.text = instagramPost.text
             instagramPostImage.loadUrl(instagramPost.display_url)
+
+            setOnClickListener { listener.invoke(instagramPost) }
         }
     }
 

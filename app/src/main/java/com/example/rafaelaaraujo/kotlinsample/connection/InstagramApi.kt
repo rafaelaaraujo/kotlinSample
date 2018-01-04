@@ -8,7 +8,8 @@ import retrofit2.http.Path
 interface InstagramApi {
 
     @GET("/explore/tags/{tag}/?__a=1")
-    fun getPostsFromTag(@Path("tag") tag:String ): RequestObservable<PostsResult>
+    fun getPostsFromTag(@Path("tag") tag:String) : Observable<PostsResult>
+    // TODO change to RequestObservable<> for unit tests (rx adapter implementation required)
 
 
 }
