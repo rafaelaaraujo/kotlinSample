@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">kotlinSample</string>
+    <string name="app_name">Insta Kotlin</string>
+
+    <string name="likes_text">%d curtidas</string>
 </resources>
