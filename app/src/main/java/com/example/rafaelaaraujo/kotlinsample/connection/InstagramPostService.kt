@@ -5,6 +5,9 @@ import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
+import okhttp3.OkHttpClient
+
+
 
 /**
  * Created by rafaela.araujo
@@ -18,13 +21,15 @@ import retrofit2.converter.moshi.MoshiConverterFactory
  */
 
 
-class SampleService {
+class InstagramPostService {
+
+    val SERVER_ADDRESS = "https://www.instagram.com/"
 
     private val instagramApi: InstagramApi
 
     init {
         val retrofit = Retrofit.Builder()
-                .baseUrl( "https://www.instagram.com/")
+                .baseUrl(SERVER_ADDRESS)
                 .addConverterFactory(MoshiConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()

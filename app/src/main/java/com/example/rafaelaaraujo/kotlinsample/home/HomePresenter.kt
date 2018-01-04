@@ -1,6 +1,6 @@
 package com.example.rafaelaaraujo.kotlinsample.home
 
-import com.example.rafaelaaraujo.kotlinsample.connection.SampleService
+import com.example.rafaelaaraujo.kotlinsample.connection.InstagramPostService
 import com.example.rafaelaaraujo.kotlinsample.model.Hashtag
 import com.example.rafaelaaraujo.kotlinsample.model.InstagramPost
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -13,7 +13,7 @@ import io.reactivex.schedulers.Schedulers
  */
 class HomePresenter(
         private val view: HomeContract.View,
-        private val service: SampleService = SampleService()) : HomeContract.Presenter {
+        private val instagramPostService: InstagramPostService = InstagramPostService()) : HomeContract.Presenter {
 
     init {
         view.presenter = this
@@ -21,7 +21,7 @@ class HomePresenter(
 
     override fun loadPosts(tag: String) {
         view.showLoading()
-        service.getPosts(tag)
+        instagramPostService.getPosts(tag)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
