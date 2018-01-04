@@ -5,22 +5,12 @@ import io.reactivex.Observable
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
-import okhttp3.OkHttpClient
-
-
-
-/**
- * Created by rafaela.araujo
- * on 03/01/18.
- */
 
 
 /**
  * Created by Rafaela Araujo
  * on 06/11/2017.
  */
-
-
 class InstagramPostService {
 
     val SERVER_ADDRESS = "https://www.instagram.com/"
