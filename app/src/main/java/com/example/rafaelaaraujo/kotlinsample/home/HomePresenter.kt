@@ -22,8 +22,6 @@ class HomePresenter(
     override fun loadPosts(tag: String) {
         view.showLoading()
         instagramPostService.getPosts(tag)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         { retrievePosts ->
                             view.hideLoading()

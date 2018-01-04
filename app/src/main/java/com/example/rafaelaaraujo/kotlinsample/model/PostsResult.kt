@@ -9,7 +9,6 @@ data class PostsResult(
 )
 
 data class MediaNode(
-        val id: String,
         val display_url: String,
         val thumbnail_src: String,
         val edge_media_to_caption: EdgesList<TextNode>,

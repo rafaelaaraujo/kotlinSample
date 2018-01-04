@@ -28,6 +28,6 @@ class InstagramPostService {
     }
 
     fun getPosts(tag:String): Observable<PostsResult> =
-            instagramApi.getPostsFromTag(tag)
+            instagramApi.getPostsFromTag(tag).prepareObservable()
 
 }
